@@ -63,13 +63,3 @@ class Hangman {
         }
     }
 }
-
-// Hangman.prototype.getStatusMessage = function () {
-//     if (this.status === 'Failed') {
-//         return `Nice try! The word was "${this.word.join('')}".`
-//     } else if (this.status === 'Playing') {
-//         return `Guesses left: ${this.remainingGuesses}`
-//     } else if (this.status === 'Finished') {
-//         return 'Great work!, you guessed the word'
-//     }
-// }
