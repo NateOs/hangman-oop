@@ -15,8 +15,11 @@ const puzzleElement  = document.querySelector('#puzzle')
 const guessesElement  = document.querySelector('#guesses')
 const game1 = new Hangman('Cat', 2)
 
-puzzleElement.textContent = game1.getPuzzle()
-guessesElement.textContent = game1.getStatusMessage()
+puzzleElement.textContent = game1.puzzle
+guessesElement.textContent = game1.statusMessage
+
+console.log(game1.puzzle)
+console.log(game1.statusMessage)
 
 
 window.addEventListener('keypress', function (e) {
@@ -25,6 +28,6 @@ window.addEventListener('keypress', function (e) {
     game1.makeGuess(guess)
     game1.gameStatus()
     
-    puzzleElement.textContent = game1.getPuzzle()
-    guessesElement.textContent = game1.getStatusMessage()
+    puzzleElement.textContent = game1.puzzle
+    guessesElement.textContent = game1.statusMessage
 })

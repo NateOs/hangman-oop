@@ -6,7 +6,7 @@ class Hangman {
         this.guessedLetters = ['c']
         this.status = 'Playing'
     }
-    getPuzzle() {
+    get puzzle() { //convert to custom getter
         let puzzle = ''
 
         this.word.forEach((letter) => {
@@ -19,7 +19,7 @@ class Hangman {
 
         return puzzle
     }
-    getGuess() {
+    getGuess() { 
         let guessLetter = 'a'
 
         this.guessedLetters.push(guessLetter)
@@ -53,7 +53,7 @@ class Hangman {
             }
             console.log(this.status)
     }
-    getStatusMessage() {
+    get statusMessage() { //convert to custom getter
         if (this.status === 'Failed') {
             return `Nice try! The word was "${this.word.join('')}".`
         } else if (this.status === 'Playing') {
