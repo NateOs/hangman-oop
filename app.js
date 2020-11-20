@@ -26,17 +26,11 @@ getPuzzle('2').then((puzzle) => {
     console.log(`Error: ${err}`)
 })
 
-// //Converted getPuzzle and getCountry to the Fetch API
-
-getCountry('MX').then((country) => {
-    console.log(country.name)
-}).catch((err) => {
-    console.log(`Error: ${err}`)
-})
-
-// Getting locationData using ipinfo API
+// Getting locationData using ipinfo API chained with getCountry promise
 getLocation().then((ipInfo) => {
-    console.log(`City: ${ipInfo.city}, Country: ${ipInfo.country} and Region: ${ipInfo.region}`)
+    return getCountry(ipInfo.country)
+}).then((country) => {
+    console.log(country.name)
 }).catch((err) => {
     console.log(`Error: ${err}`)
 })
