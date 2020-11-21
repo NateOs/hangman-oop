@@ -34,3 +34,9 @@ getLocation().then((ipInfo) => {
 }).catch((err) => {
     console.log(`Error: ${err}`)
 })
+
+getCurrentCountry().then((country) => {
+    console.log(country.name)
+}).catch((error) => {
+    console.log(error)
+})
