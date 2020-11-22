@@ -16,11 +16,11 @@ window.addEventListener('keypress', (e) => {
 // });
 
 
-getPuzzle('2').then((puzzle) => {
-    console.log(puzzle)
-}).catch((err) => {
-    console.log(`Error: ${err}`)
-})
+// getPuzzle('2').then((puzzle) => {
+//     console.log(puzzle)
+// }).catch((err) => {
+//     console.log(`Error: ${err}`)
+// })
 
 // Getting locationData using ipinfo API chained with getCountry promise
 getLocation().then((ipInfo) => {
@@ -40,7 +40,9 @@ const startGame = async () => {
     const puzzle = await getPuzzle('2')
     game1 = new Hangman(puzzle, 5)
     render()
-}   
+}  
+
+
 
 document.querySelector('#reset').addEventListener('click', () => {
     startGame()
