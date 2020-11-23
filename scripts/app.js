@@ -32,8 +32,16 @@ getLocation().then((ipInfo) => {
 })
 
 const render = () => {
-    puzzleElement.textContent = game1.puzzle
+    puzzleElement.innerHTML = ''
     guessesElement.textContent = game1.statusMessage
+
+    //adding span to each letter 
+    game1.puzzle.split('').forEach((letter) => {
+        const letterEl = document.createElement('span')
+        letterEl.textContent = letter
+        puzzleElement.appendChild(letterEl)
+    })
+
 }
 
 const startGame = async () => {

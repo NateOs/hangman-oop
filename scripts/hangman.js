@@ -6,7 +6,7 @@ class Hangman {
         this.guessedLetters = ['c']
         this.status = 'Playing'
     }
-    get puzzle() { //convert to custom getter
+    get puzzle() { //converted to custom getter
         let puzzle = ''
 
         this.word.forEach((letter) => {
